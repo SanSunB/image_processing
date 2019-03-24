@@ -8,6 +8,7 @@ def knots_grid(height_knots, width_knots, input_knot_size, image_original):
     """ Create a grid that constructed of one color cells. Each cell represents an area in the picture,
         the cell color is the average of the colors in that area. """
 
+
     # Calculate how many pixels will be on each cell. The amount of pixels in the image divided by number of knots.
     # Example: image pixels amount = 200, knots amount = 100 : 2 pixels in every cell (knot representation).
     cell_height = int(math.ceil(image_original.height/height_knots))

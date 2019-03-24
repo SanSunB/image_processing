@@ -9,17 +9,16 @@ class Cell(Pixel):
     def __init__(self, cell_height, cell_width, color_grid):
         """ Initiate the cell size and the original image from arguments."""
         super()
-        self.cell_width = cell_width
-        self.cell_height = cell_height
+        self.width = cell_width
+        self.height = cell_height
         self.color_grid = color_grid
         self.pixel_amount = self.set_pixel_amount()
         self.height_index = 0
         self.width_index = 0
-        self.cell_pixels = []
 
     def set_pixel_amount(self):
         """ Calculate the amount of pixels in every cell, rectangle calculation."""
-        self.pixel_amount = self.cell_height * self.cell_width
+        self.pixel_amount = self.height * self.width
         return self.pixel_amount
 
     def set_width_index(self, x):
@@ -37,10 +36,10 @@ class Cell(Pixel):
         self.color = [0, 0, 0]  # initialize the the color value
 
         # get all the pixels values in the cell according in the indexes we got in the image
-        for y in range(self.width_index,self.width_index+self.cell_width):
+        for y in range(self.width_index,self.width_index+self.width):
             if y >= len(self.color_grid): break  # Stop loop if index exceeded the grid
 
-            for x in range(self.height_index,self.height_index+self.cell_height):
+            for x in range(self.height_index,self.height_index+self.height):
                 if x >= len(self.color_grid[0]): break  # Stop loop if index exceeded the grid
 
                 # Add the current pixel RGB value to the sum of the entire cell.

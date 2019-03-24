@@ -1,8 +1,5 @@
-""" pixel class to represent a single pixel in the image"""
-
-
 class Pixel:
-
+    """ Represent the color value of a pixel in the image. """
     # Methods
     def __init__(self):
         # color [r,g,b] list
@@ -11,6 +8,3 @@ class Pixel:
     def __init__(self, color):
         # color [r,g,b] list
         self.color = color
-
-    def get_color(self):
-        return self.color
