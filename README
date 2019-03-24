@@ -1,0 +1,4 @@
+A personal project in python.
+
+The program recieves an image and construct it from new approximate color squars.
+The goal is to create a map of how to knit the picture. 
