@@ -2,3 +2,8 @@ A personal project in python.
 
 The program recieves an image and construct it from new approximate color squars.
 The goal is to create a map of how to knit the picture. 
+
+Version 1 - Basic logic. Divide the to squares, calculate teh avarege color in each square. Create small squares filled with the color
+            we calculated, and constructing them into an image.
+            I used - Numpy and ompencv.
+Version 2 - Added tkinter basic GUI.
