@@ -3,7 +3,7 @@ from knots_grid import *
 import cv2
 
 
-def grandma_project(image_name, height, width, size):
+def grandma_project(image_name="sun.jpeg", height=50, width=100, size=10):
     """ Receive an image and return an approximation of the image in color squares.
         Every square will represent a knot, so the out image will be guide to knitting the picture."""
 
@@ -26,3 +26,7 @@ def grandma_project(image_name, height, width, size):
     # Display the new image to the user until any key is pressed.
     cv2.imshow("s", image_knots)
     cv2.waitKey(0)
+
+    #return image_knots
+
+grandma_project()

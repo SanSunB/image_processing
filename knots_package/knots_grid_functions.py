@@ -1,4 +1,4 @@
-from imageConstructed import ImageConstructed
+from image_constructed import Image_constructed
 
 
 def create_knots_grid(cell, image_original, cell_height, cell_width, input_knot_size):
@@ -21,7 +21,7 @@ def create_knots_grid(cell, image_original, cell_height, cell_width, input_knot_
             cell.set_cell_color()
 
             # From the cell color we calculated contruct a new iamge
-            image_constructed = ImageConstructed(input_knot_size, input_knot_size, cell.color)
+            image_constructed = Image_constructed(input_knot_size, input_knot_size, cell.color)
 
             # Add the images to the image array so we can show them as a collection af one picture
             img_grid[row_index].append(image_constructed.img)

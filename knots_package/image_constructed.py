@@ -2,7 +2,7 @@ from Image import Image
 import numpy as np
 
 
-class ImageConstructed(Image):
+class Image_constructed(Image):
     """ Class for images we create from a single color."""
     def __init__(self, height, width, color):
         """ Initialize the image values."""
