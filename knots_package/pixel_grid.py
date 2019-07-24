@@ -10,6 +10,6 @@ def pixel_grid(image_name):
     #image.set_color_grid()
 
     #assert image.img is not None, f"The number to divide must not be zero!"
-    assert image.height > 0 and image.width > 0, f"Problem with getting image size"
+    assert image.height > 0 and image.width > 0, f"Problem  getting image size"
 
     return image # Return the image object that contains the pixel matrix
