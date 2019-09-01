@@ -1,0 +1,27 @@
+section{
+  display: grid;
+  grid-template-rows: 30%, 60%, 10%;
+}
+img{
+   max-height: 500px;
+   max-width: 500px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+}
+input{
+  margin: 5px;
+}
+button{
+  margin: 5px;
+  border: solid 1px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.btn{
+  text-align: center;
+}
