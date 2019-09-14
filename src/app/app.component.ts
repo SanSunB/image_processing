@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServiceDashboard} from './app.service';
 import { Router,ActivatedRoute } from '@angular/router';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 interface urlData{
   img: string;
@@ -10,9 +11,12 @@ interface urlData{
   styleUrls: ['./app.component.css'],
   template: `
   <div>
-  <h1> Pixeled image </h1>
+    <mat-toolbar color="primary">
+    Pixeled image
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <label> *Describe the amount of knots in the image, amount=height X width. </label>
   </div>
-  <router-outlet></router-outlet>
   `
 })
 export class AppComponent implements OnInit{

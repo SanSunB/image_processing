@@ -6,12 +6,20 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 // Services we created, add it to providers
 import {ServiceDashboard} from './app.service';
 import { ImageProcessComponent } from './image-process/image-process.component'
 import { InputImageComponent } from './input-image/input-image.component'
 import { OutputImageComponent } from './output-image/output-image.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ImageLoaderComponent } from './image-loader/image-loader.component';
+
 
 
 const routes: Routes =[
@@ -24,13 +32,20 @@ const routes: Routes =[
     AppComponent,
     ImageProcessComponent,
     InputImageComponent,
-    OutputImageComponent
+    OutputImageComponent,
+    ImageLoaderComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFileUploadModule,
+    MatProgressSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [ServiceDashboard],
   bootstrap: [AppComponent]
