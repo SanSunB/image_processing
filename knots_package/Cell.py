@@ -36,14 +36,14 @@ class Cell(Pixel):
         self.color = [0, 0, 0]  # initialize the the color value
 
         # get all the pixels values in the cell according in the indexes we got in the image
-        for y in range(self.width_index,self.width_index+self.width):
+        for y in range(self.width_index,self.width_index+self.width,2):
             if y >= len(self.color_grid): break  # Stop loop if index exceeded the grid
 
-            for x in range(self.height_index,self.height_index+self.height):
+            for x in range(self.height_index,self.height_index+self.height,3):
                 if x >= len(self.color_grid[0]): break  # Stop loop if index exceeded the grid
 
                 # Add the current pixel RGB value to the sum of the entire cell.
                 self.color = [sum(x) for x in zip(self.color, self.color_grid[y][x])]
 
         # Divide in the number of pixels to get tha average value
-        self.color = [int(math.ceil(x/self.pixel_amount)) for x in self.color]
+        self.color = [int(math.ceil(x/(self.pixel_amount/6))) for x in self.color]

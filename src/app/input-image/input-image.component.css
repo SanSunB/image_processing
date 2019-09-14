@@ -2,19 +2,22 @@ section{
   display: grid;
   grid-template-rows: 30%, 60%, 10%;
 }
-img{
+img, mat-spinner{
    max-height: 500px;
    max-width: 500px;
    display: block;
    margin-left: auto;
    margin-right: auto;
-   width: 50%;
+   width: 50vw;
+   height: 50vh;
 }
-input{
-  margin: 5px;
+mat-form-field{
+  margin: 1rem 2rem;
+  margin-bottom: 0rem;
 }
 button{
-  margin: 5px;
+  margin: 2rem;
+  margin-bottom: 3rem;
   border: solid 1px;
   padding: 15px 32px;
   text-align: center;
@@ -22,6 +25,7 @@ button{
   font-size: 20px;
   border-radius: 10px;
 }
-.btn{
+p{
   text-align: center;
+  margin: 2rem;
 }

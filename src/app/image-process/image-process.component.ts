@@ -1,52 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { InputValues } from '../models/input.interface';
 import {ServiceDashboard} from '../app.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
-
-
+// Main view of getting image and parameters to send image for processing
 @Component({
   selector: 'app-image-process',
   styleUrls: ['./image-process.component.css'],
   template: `
   <div>
-  <input type="file" accept="image/gif, image/jpeg, image/png"
-  name="imageUpload"  #imageUpload required
-  (change)="onFileSelected(imageUpload.files)">
-  <app-input-image
-  (submitt)="onSubmitPassenger($event)"
-  [imgURL]="image">
-  </app-input-image>
+    <app-input-image
+    (submitt)="onSubmitImage($event)"
+    [imgURL]="image"
+    [Loading]="isLoading">
+    </app-input-image>
+    <app-image-loader
+    [Loading]="isLoading"
+    (imageChange)="imageChange($event)"></app-image-loader>
   </div>
   `
 })
 export class ImageProcessComponent {
-
   constructor(private router: Router,
-    private route: ActivatedRoute,
-    private serviceDashboard: ServiceDashboard) { }
-
+              private serviceDashboard: ServiceDashboard) { }
 
   image: any = null;
-  imagePath;
+  pixeledImage: any = null;
+  isLoading = false;
 
-
-  onFileSelected(files) {
-    if (files.length > 0) {
-      const reader = new FileReader();
-      this.imagePath = files;
-      reader.readAsDataURL(files[0]);
-      reader.onload = (event) => {
-      this.image = reader.result;
-      }
-    }
-  }
-
-  onSubmitPassenger(inputValues: InputValues){
+  // Send image to service and call output view.
+  onSubmitImage(inputValues: InputValues){
+    this.isLoading = true;
     // Call the service and navigate to a different page
     this.serviceDashboard.getPixeledImage(inputValues)
-    .subscribe((data) =>
-    {this.image = 'http://localhost:5000' + data.img;});
-    //this.image = 'http://localhost:5000' + data.img;
+    .subscribe((data) => {
+      // Navigate to output view to display pixeled image.
+      const navigationExtras: NavigationExtras = {state: {name: data.img}};
+      this.router.navigate(['/pixeledImage'], navigationExtras);
+    });
+  }
+
+  // Update image from child view
+  imageChange(image) {
+    this.image = image;
   }
 }

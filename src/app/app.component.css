@@ -1,6 +1,10 @@
-h1{
-  text-align: center;
-  background-color: blanchedalmond;
-  padding: 10px;
-  padding-top: 20px;
+mat-toolbar{
+  margin-bottom: 1rem;
+}
+label{
+  vertical-align: bottom;
+  margin-bottom: 1rem;
+}
+div{
+  height: 100vh;
 }

@@ -32,8 +32,11 @@ export class ServiceDashboard{
 
 
   // Send a string to the server
-  putAny(): Observable<any> {
-    return this.http.post(FLASK_API, 'sunsun');
+  getImage(imageName): Observable<any> {
+    let image;
+
+    image = 'http://localhost:5000' + imageName;
+    return image;
   }
 
 }
